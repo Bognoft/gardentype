@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Type</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <div class="sidenav">
+        <!-- buttons for navigation between home and high scores and also the buttons for all the levels -->
+        <!-- also all the levels are included in the sidenav -->
+        <!-- all levels have star class which is activated by complieting the level -->
+        <!-- all the levels are grouped using an array so thats why it starts with 0 -->
+        <button class="navbutton active" onclick="showHome()" >Home</button>
+        <button class="navbutton" onclick="showScores()">High Scores</button>
+        
+        <div class="levelsection">
+            <h3>Easy Levels 1 to 5</h3>
+            <button class="levelbutton" onclick="startLevel(0)">
+                <span>Level 1</span>
+                <span class="star" id="star0"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(1)">
+                <span>Level 2</span>
+                <span class="star" id="star1"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(2)">
+                <span>Level 3</span>
+                <span class="star" id="star2"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(3)">
+                <span>Level 4</span>
+                <span class="star" id="star3"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(4)">
+                <span>Level 5</span>
+                <span class="star" id="star4"></span>
+            </button>
+        </div>
+
+        <div class="levelsection">
+            <h3>Medium Levels 6 to 12</h3>
+            <button class="levelbutton" onclick="startLevel(5)">
+                <span>Level 6</span>
+                <span class="star" id="star5"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(6)">
+                <span>Level 7</span>
+                <span class="star" id="star6"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(7)">
+                <span>Level 8</span>
+                <span class="star" id="star7"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(8)">
+                <span>Level 9</span>
+                <span class="star" id="star8"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(9)">
+                <span>Level 10</span>
+                <span class="star" id="star9"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(10)">
+                <span>Level 11</span>
+                <span class="star" id="star10"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(11)">
+                <span>Level 12</span>
+                <span class="star" id="star11"></span>
+            </button>
+        </div>
+
+        <div class="levelsection">
+            <h3>Hard Levels 13 to 16</h3>
+            <button class="levelbutton" onclick="startLevel(12)">
+                <span>Level 13</span>
+                <span class="star" id="star12"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(13)">
+                <span>Level 14</span>
+                <span class="star" id="star13"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(14)">
+                <span>Level 15</span>
+                <span class="star" id="star14"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(15)">
+                <span>Level 16</span>
+                <span class="star" id="star15"></span>
+            </button>
+        </div>
+
+        <div class="levelsection">
+            <h3>Expert Levels 17 to 20</h3>
+            <button class="levelbutton" onclick="startLevel(16)">
+                <span>Level 17</span>
+                <span class="star" id="star16"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(17)">
+                <span>Level 18</span>
+                <span class="star" id="star17"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(18)">
+                <span>Level 19</span>
+                <span class="star" id="star18"></span>
+            </button>
+            <button class="levelbutton" onclick="startLevel(19)">
+                <span>Level 20</span>
+                <span class="star" id="star19"></span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- start of the main content area -->
+    <!-- this has the homepage which shows your stats -->
+    <!-- and the homepage also has a button to start level 1 -->
+    <div class="maincontent">
+        <div class="homepage" id="homepage">
+            <h1>Garden Type</h1>
+            <p>Check out your Stats!</p>
+            
+            <div class="statsgrid">
+                <div class="statcard">
+                    <h3>Levels Completed</h3>
+                    <div class="value" id="completedlevels">0</div>
+                </div>
+                <div class="statcard">
+                    <h3>Best WPM</h3>
+                    <div class="value" id="bestwpm">0</div>
+                </div>
+                <div class="statcard">
+                    <h3>Total Games</h3>
+                    <div class="value" id="totalgames">0</div>
+                </div>
+                <div class="statcard">
+                    <h3>Avg Accuracy</h3>
+                    <div class="value" id="averageaccuracy">0%</div>
+                </div>
+            </div>
+            
+            <button class="startbutton" onclick="startLevel(0)">Start Level 1</button>
+        </div>
+
+        <div class="homepage" id="scorespage" style="display: none;">
+            <h1>High Scores</h1>
+            <p>Your best performance for each level</p>
+            <div id="scoreslist"></div>
+        </div>
+
+        <div class="imageextra1" id="imageextra1">
+            <img src="e9f43c04be31b52741f470b998f21188.gif">
+        </div>
+        <div class="imageextra2" id="imageextra2">
+            <img src="e9f43c04be31b52741f470b998f21188.gif">
+        </div>
+        <div class="imageextra3" id="imageextra3">
+            <img src="e9f43c04be31b52741f470b998f21188.gif">
+        </div>
+        <div class="imageextra4" id="imageextra4">
+            <img src="e9f43c04be31b52741f470b998f21188.gif">
+        </div>
+            
+
+        <!-- just some standard info for the game area -->
+        <div class="wrapper" id="gamewrapper">
+            <div class="levelheader">
+                <h2 id="leveltitle">Level 1</h2>
+                <p id="leveldifficulty">Difficulty: Easy</p>
+            </div>
+            <!-- this is where the user inputs the typing its hidden by css to show that it is inside the paragraph box-->
+            <input type="text" class="inputfield">
+            
+            <!--this content box shows the paragraph to type and also the placeholder for the paragraphs whenever it changes -->
+            <div class="contentbox">
+                <div class="typingtext">
+                    <p></p>
+                </div>
+                <!-- an unorderelist showing the time left, mistakes, WPM, and CPM which is changed by css to be a horizontal list with the try again button-->
+                <div class="content">
+                    <ul class="resultdetails">
+                        <li class="time">
+                            <p>Time Left:</p>
+                            <span><b>60</b>s</span>
+                        </li>
+                        <li class="mistake">
+                            <p>Mistakes:</p>
+                            <span>0</span>
+                        </li>
+                        <li class="wpm">
+                            <p>WPM:</p>
+                            <span>0</span>
+                        </li>
+                        <li class="cpm">
+                            <p>CPM:</p>
+                            <span>0</span>
+                        </li>
+                    </ul>
+                    <!-- reset button to try again the specific level -->
+                    <button onclick="resetGame()">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="paragraphs.js"></script>
+    <script src="mainpage.js"></script>
+</body>
+</html>

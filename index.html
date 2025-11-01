@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Type - Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('unnamed.jpg');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .introcontainer {
+            text-align: center;
+            background: white;
+            padding: 60px 50px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #1b5e20;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .featureicon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .featuretext {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .proceedbutton {
+            padding: 18px 50px;
+            font-size: 22px;
+            background: rgb(34, 187, 55);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(34, 187, 55, 0.3);
+            font-weight: bold;
+        }
+
+        .proceedbutton:hover {
+            background: rgb(26, 140, 39);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(34, 187, 55, 0.4);
+        }
+
+        .proceedbutton:active {
+            transform: translateY(0);
+        }
+
+        .flowers {
+            position: absolute;
+            width: 150px;
+            height: auto;
+            opacity: 0.7;
+        }
+
+        .flower1 { top: -20px; left: 100px; }
+        .flower2 { bottom: 80px; left: 150px; }
+        .flower3 { top: 0px; right: 550px; }
+        .flower4 { bottom: 100px; right: 450px; }
+    </style>
+</head>
+<body>
+    <div class="flowers flower1">
+        <img src="e9f43c04be31b52741f470b998f21188.gif" alt="flower">
+    </div>
+    <div class="flowers flower2">
+        <img src="e9f43c04be31b52741f470b998f21188.gif" alt="flower">
+    </div>
+    <div class="flowers flower3">
+        <img src="e9f43c04be31b52741f470b998f21188.gif" alt="flower">
+    </div>
+    <div class="flowers flower4">
+        <img src="e9f43c04be31b52741f470b998f21188.gif" alt="flower">
+    </div>
+
+    <div class="introcontainer">
+        <div class="logo"></div>
+        <h1>Garden Type</h1>
+        <p class="subtitle">Grow Your Typing Skills</p>
+        <p class="description">
+            Welcome to Garden Type! Master your typing skills through 20 different levels. 
+            From easy beginner exercises to expert challenges.
+        </p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="featureicon">🌻</div>
+                <div class="featuretext">20 Levels</div>
+            </div>
+            <div class="feature">
+                <div class="featureicon">🌷</div>
+                <div class="featuretext">Track WPM</div>
+            </div>
+            <div class="feature">
+                <div class="featureicon">🌹</div>
+                <div class="featuretext">High Scores</div>
+            </div>
+            <div class="feature">
+                <div class="featureicon">🌼</div>
+                <div class="featuretext">View Stats</div>
+            </div>
+        </div>
+
+        <button class="proceedbutton" onclick="window.location.href='mainpage.html'">
+            Proceed
+        </button>
+    </div>
+</body>
+</html>
