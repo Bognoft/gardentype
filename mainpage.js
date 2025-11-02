@@ -1,3 +1,4 @@
+// reference for the typing game code https://www.youtube.com/watch?v=Hg80AjDNnJk&list=WL&index=1&t=1927s
 // Selecting necessary DOM elements for the typing game
 // these elements are used to display the typing text, input field, statistics, and control buttons
 const typingtext = document.querySelector(".typingtext p");
@@ -12,6 +13,7 @@ const homepage = document.getElementById("homepage");
 const scorespage = document.getElementById("scorespage");
 const leveltitle = document.getElementById("leveltitle");
 const leveldifficulty = document.getElementById("leveldifficulty");
+const nextlevelbutton = document.getElementById("nextlevelbutton");
 
 // Game state variables
 // these variables track the timer, typing progress, mistakes, and current level
@@ -92,6 +94,7 @@ function initTyping() {
             clearInterval(timer);
             inputfield.value = "";
             saveScore();
+            showNextLevelButton();
         }
         
         mistaketag.innerText = mistakes;
@@ -101,6 +104,7 @@ function initTyping() {
         clearInterval(timer);
         inputfield.value = "";
         saveScore();
+        showNextLevelButton();
     }
     
     calculateWPM();
@@ -172,6 +176,9 @@ function saveScore() {
         
         document.getElementById(`star${currentlevel}`).innerText = "⭐";
         document.querySelectorAll('.levelbutton')[currentlevel].classList.add('completed');
+        
+        // Unlock next level
+        unlockNextLevel(currentlevel);
     }
     
     gamescores.totalgames++;
@@ -179,6 +186,32 @@ function saveScore() {
     gamescores.allaccuracies.push(accuracy);
     
     updateHomeStats();
+}
+
+// Function to unlock the next level
+function unlockNextLevel(completedLevel) {
+    const nextLevel = completedLevel + 1;
+    if (nextLevel < 20) {
+        const nextLevelButton = document.getElementById(`levelbutton${nextLevel}`);
+        if (nextLevelButton) {
+            nextLevelButton.classList.remove('locked');
+        }
+    }
+}
+
+// Function to show next level button
+function showNextLevelButton() {
+    if (currentlevel < 19) {
+        nextlevelbutton.disabled = false;
+        nextlevelbutton.classList.add('enabled');
+    }
+}
+
+// Function to go to next level
+function goToNextLevel() {
+    if (currentlevel < 19 && !nextlevelbutton.disabled) {
+        startLevel(currentlevel + 1);
+    }
 }
 
 //update home stats function
@@ -218,6 +251,10 @@ function resetGame() {
     wpmtag.innerText = 0;
     cpmtag.innerText = 0;
     
+    // Disable and grey out next level button when resetting
+    nextlevelbutton.disabled = true;
+    nextlevelbutton.classList.remove('enabled');
+    
     inputfield.focus();
 }
 
@@ -227,6 +264,13 @@ function resetGame() {
 // updates level title and difficulty
 // and then pagkaselect mo rereset nya yung game gamit yung resetgame function para di masave yung previous state
 function startLevel(levelindex) {
+    // Check if level is locked
+    const levelButton = document.getElementById(`levelbutton${levelindex}`);
+    if (levelButton && levelButton.classList.contains('locked')) {
+        alert('This level is locked! Complete the previous level first.');
+        return;
+    }
+    
     currentlevel = levelindex;
     
     maximumtime = levelinformation[levelindex].time;

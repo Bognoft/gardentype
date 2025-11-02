@@ -17,23 +17,23 @@
         
         <div class="levelsection">
             <h3>Easy Levels 1 to 5</h3>
-            <button class="levelbutton" onclick="startLevel(0)">
+            <button class="levelbutton" onclick="startLevel(0)" id="levelbutton0">
                 <span>Level 1</span>
                 <span class="star" id="star0"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(1)">
+            <button class="levelbutton locked" onclick="startLevel(1)" id="levelbutton1">
                 <span>Level 2</span>
                 <span class="star" id="star1"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(2)">
+            <button class="levelbutton locked" onclick="startLevel(2)" id="levelbutton2">
                 <span>Level 3</span>
                 <span class="star" id="star2"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(3)">
+            <button class="levelbutton locked" onclick="startLevel(3)" id="levelbutton3">
                 <span>Level 4</span>
                 <span class="star" id="star3"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(4)">
+            <button class="levelbutton locked" onclick="startLevel(4)" id="levelbutton4">
                 <span>Level 5</span>
                 <span class="star" id="star4"></span>
             </button>
@@ -41,31 +41,31 @@
 
         <div class="levelsection">
             <h3>Medium Levels 6 to 12</h3>
-            <button class="levelbutton" onclick="startLevel(5)">
+            <button class="levelbutton locked" onclick="startLevel(5)" id="levelbutton5">
                 <span>Level 6</span>
                 <span class="star" id="star5"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(6)">
+            <button class="levelbutton locked" onclick="startLevel(6)" id="levelbutton6">
                 <span>Level 7</span>
                 <span class="star" id="star6"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(7)">
+            <button class="levelbutton locked" onclick="startLevel(7)" id="levelbutton7">
                 <span>Level 8</span>
                 <span class="star" id="star7"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(8)">
+            <button class="levelbutton locked" onclick="startLevel(8)" id="levelbutton8">
                 <span>Level 9</span>
                 <span class="star" id="star8"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(9)">
+            <button class="levelbutton locked" onclick="startLevel(9)" id="levelbutton9">
                 <span>Level 10</span>
                 <span class="star" id="star9"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(10)">
+            <button class="levelbutton locked" onclick="startLevel(10)" id="levelbutton10">
                 <span>Level 11</span>
                 <span class="star" id="star10"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(11)">
+            <button class="levelbutton locked" onclick="startLevel(11)" id="levelbutton11">
                 <span>Level 12</span>
                 <span class="star" id="star11"></span>
             </button>
@@ -73,19 +73,19 @@
 
         <div class="levelsection">
             <h3>Hard Levels 13 to 16</h3>
-            <button class="levelbutton" onclick="startLevel(12)">
+            <button class="levelbutton locked" onclick="startLevel(12)" id="levelbutton12">
                 <span>Level 13</span>
                 <span class="star" id="star12"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(13)">
+            <button class="levelbutton locked" onclick="startLevel(13)" id="levelbutton13">
                 <span>Level 14</span>
                 <span class="star" id="star13"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(14)">
+            <button class="levelbutton locked" onclick="startLevel(14)" id="levelbutton14">
                 <span>Level 15</span>
                 <span class="star" id="star14"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(15)">
+            <button class="levelbutton locked" onclick="startLevel(15)" id="levelbutton15">
                 <span>Level 16</span>
                 <span class="star" id="star15"></span>
             </button>
@@ -93,19 +93,19 @@
 
         <div class="levelsection">
             <h3>Expert Levels 17 to 20</h3>
-            <button class="levelbutton" onclick="startLevel(16)">
+            <button class="levelbutton locked" onclick="startLevel(16)" id="levelbutton16">
                 <span>Level 17</span>
                 <span class="star" id="star16"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(17)">
+            <button class="levelbutton locked" onclick="startLevel(17)" id="levelbutton17">
                 <span>Level 18</span>
                 <span class="star" id="star17"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(18)">
+            <button class="levelbutton locked" onclick="startLevel(18)" id="levelbutton18">
                 <span>Level 19</span>
                 <span class="star" id="star18"></span>
             </button>
-            <button class="levelbutton" onclick="startLevel(19)">
+            <button class="levelbutton locked" onclick="startLevel(19)" id="levelbutton19">
                 <span>Level 20</span>
                 <span class="star" id="star19"></span>
             </button>
@@ -117,6 +117,22 @@
     <!-- this has the homepage which shows your stats -->
     <!-- and the homepage also has a button to start level 1 -->
     <div class="maincontent">
+        <!-- Flowers container with relative positioning -->
+        <div class="flowerscontainer">
+            <div class="imageextra1" id="imageextra1">
+                <img src="e9f43c04be31b52741f470b998f21188.gif">
+            </div>
+            <div class="imageextra2" id="imageextra2">
+                <img src="e9f43c04be31b52741f470b998f21188.gif">
+            </div>
+            <div class="imageextra3" id="imageextra3">
+                <img src="e9f43c04be31b52741f470b998f21188.gif">
+            </div>
+            <div class="imageextra4" id="imageextra4">
+                <img src="e9f43c04be31b52741f470b998f21188.gif">
+            </div>
+        </div>
+
         <div class="homepage" id="homepage">
             <h1>Garden Type</h1>
             <p>Check out your Stats!</p>
@@ -148,20 +164,6 @@
             <p>Your best performance for each level</p>
             <div id="scoreslist"></div>
         </div>
-
-        <div class="imageextra1" id="imageextra1">
-            <img src="e9f43c04be31b52741f470b998f21188.gif">
-        </div>
-        <div class="imageextra2" id="imageextra2">
-            <img src="e9f43c04be31b52741f470b998f21188.gif">
-        </div>
-        <div class="imageextra3" id="imageextra3">
-            <img src="e9f43c04be31b52741f470b998f21188.gif">
-        </div>
-        <div class="imageextra4" id="imageextra4">
-            <img src="e9f43c04be31b52741f470b998f21188.gif">
-        </div>
-            
 
         <!-- just some standard info for the game area -->
         <div class="wrapper" id="gamewrapper">
@@ -197,8 +199,11 @@
                             <span>0</span>
                         </li>
                     </ul>
-                    <!-- reset button to try again the specific level -->
-                    <button onclick="resetGame()">Try Again</button>
+                    <!-- action buttons container -->
+                    <div class="actionbuttons">
+                        <button onclick="resetGame()">Try Again</button>
+                        <button class="nextlevelbutton" id="nextlevelbutton" onclick="goToNextLevel()" disabled>Next Level</button>
+                    </div>
                 </div>
             </div>
         </div>

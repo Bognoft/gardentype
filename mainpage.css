@@ -107,13 +107,27 @@ body {
     transition: transform 0.2s, filter 0.2s;
 }
 
-.levelbutton:hover {
+.levelbutton:hover:not(.locked) {
     transform: scale(1.05);
     filter: brightness(1.1);
 }
 
 .levelbutton.completed {
     filter: brightness(1.2);
+}
+
+/* locked level styling */
+.levelbutton.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(0.7);
+}
+
+.levelbutton.locked::after {
+    content: "🔒";
+    position: absolute;
+    right: 40px;
+    font-size: 20px;
 }
 
 /* star icon */
@@ -133,6 +147,7 @@ body {
     align-items: center;
     padding: 20px;
     min-height: 100vh;
+    position: relative;
 }
 
 /* homepage and scores page */
@@ -145,6 +160,8 @@ body {
     max-width: 700px;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
 }
 
 /* main heading on homepage */
@@ -260,6 +277,8 @@ body {
     border-radius: 10px;
     display: none;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
 }
 
 /* show game when active */
@@ -299,12 +318,22 @@ body {
 /* content box */
 /* container for typing text and results */
 .wrapper .contentbox {
-    padding: 13px 20px 0;
+    padding: 20px 10px 0;
     border-radius: 10px;
     border: 1px solid #ccc;
 }
 
-/* yung mga flowers na animated */
+/* yung mga flowers na animated - now relative positioning */
+.flowerscontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .imageextra1, .imageextra2, .imageextra3, .imageextra4 {
     width: 200px;
     height: auto;
@@ -313,16 +342,20 @@ body {
 }
 
 .imageextra1 { 
-    top: 10px; left: 300px; 
+    top: 10px; 
+    left: 20px; 
 }
 .imageextra2 { 
-    top: 550px; left: 250px; 
+    bottom: 0px; 
+    left: 250px; 
 }
 .imageextra3 { 
-    top: -100px; right: 350px; 
+    top: 10px; 
+    right: 350px; 
 }
 .imageextra4 { 
-    top: 450px; right: 250px; 
+    bottom: 100px; 
+    right: 250px; 
 }
 
 
@@ -394,6 +427,12 @@ body {
     justify-content: space-between;
 }
 
+/* action buttons container */
+.content .actionbuttons {
+    display: flex;
+    gap: 10px;
+}
+
 /* try again button */
 .content button {
     width: 130px;
@@ -408,16 +447,33 @@ body {
     transition: background 0.3s ease;
 }
 
-/* try again button hover effect */
 .content button:hover {
     background: rgb(26, 140, 39);
+}
+
+/* next level button - greyed out by default */
+.content button.nextlevelbutton {
+    background: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* next level button pag nacomplete mo na */
+.content button.nextlevelbutton.enabled {
+    background: rgb(30, 150, 200);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.content button.nextlevelbutton.enabled:hover {
+    background: rgb(20, 120, 170);
 }
 
 /* result details */
 /* stats display time mistakes wpm cpm */
 .content .resultdetails {
     display: flex;
-    width: calc(100% - 140px);
+    width: calc(100% - 300px);
     justify-content: space-between;
 }
 
@@ -431,8 +487,7 @@ body {
 
 /* add left border to all stats except the first */
 .resultdetails li:not(:first-child) {
-    border-left: 1px solid #ccc;
-    padding-left: 22px;
+    padding-left: 20px;
 }
 
 /* stat label for example time left */
