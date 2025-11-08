@@ -1,4 +1,4 @@
-// reference for the typing game code https://www.youtube.com/watch?v=Hg80AjDNnJk&list=WL&index=1&t=1927s
+// reference for the typing game code tutorial https://www.youtube.com/watch?v=Hg80AjDNnJk&list=WL&index=1&t=1927s
 // Selecting necessary DOM elements for the typing game
 // these elements are used to display the typing text, input field, statistics, and control buttons
 const typingtext = document.querySelector(".typingtext p");
